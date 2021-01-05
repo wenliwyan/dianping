@@ -27,4 +27,9 @@ python src/review_parser.py
 python src/review_summary.py
 ```
 
-\* Cookie may need to be updated if error occurs...
+**Important:**
+
+When making http requests to acquire the *personal member page* and *specific review page*, `http_headers` in `src/review_summary.py` need to be updated accordingly in order to get a successfull response. It is not clear when `302 Redirect` to verification and `403 Forbidden` will be triggered on the dianping website.
+
+My current approach is to access the personal member page in the actual browser, do the login and verification manually if needed, open browser development tools such as `Inspect Element`, and copy the `Cookie` value.
+
