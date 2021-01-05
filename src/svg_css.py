@@ -32,7 +32,7 @@ class SvgCss:
 
         svg_url = 'http:' + matched.group(2)
         logging.debug(f'Found dependant svg link: {svg_url}')
-        svg_text = SvgText(svg_url)
+        svg_text = SvgText.from_web_url(svg_url)
 
         # example:          .scbifa{background:-224.0px -314.0px;}
         class_pattern = (r'\.(%s\w+){background:-(\d+)\.0px -(\d+)\.0px;}' %
